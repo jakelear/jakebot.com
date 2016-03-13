@@ -3,16 +3,8 @@ var setup       = require('./setup'),
     watch       = require('metalsmith-watch');
 
 // DEPLOY
-setup.metalsmith.use(serve())
-  .use(
-    watch({
-      paths: {
-        "${source}/**/*": true,
-        'src/layouts/**/*.html' : "**/*"
-      },
-        livereload: true,
-    })
-  )
+setup.metalsmith
+  .use(serve())
   .build(function (err) {
     if (err) {
       console.log(err)
