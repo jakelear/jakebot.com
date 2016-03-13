@@ -8,9 +8,12 @@ var Metalsmith  = require('metalsmith'),
     nunjucks    = require('nunjucks'),
     date        = require('nunjucks-date'),
     assets      = require('metalsmith-assets'),
+    sass        = require('metalsmith-sass'),
     ignore      = require('metalsmith-ignore'),
     serve       = require('metalsmith-serve'),
-    watch       = require('metalsmith-watch');
+    watch       = require('metalsmith-watch'),
+    dotenv      = require('dotenv')
+    push        = require('metalsmith-push');
 
 var config = {
   source_dir      : './src/content',
@@ -21,7 +24,13 @@ var config = {
     source: './src/content/assets',
     destination: './assets'
   }
-}
+};
+
+var s3_config = {
+  bucket: process.env.S3_BUCKET,
+  awsKey: process.env.AWS_ACCESS_KEY_ID,
+  awsSecret: process.env.AWS_SECRET_ACCESS_KEY
+};
 
 var metadata = {
   title: 'Jakebot',
@@ -29,6 +38,8 @@ var metadata = {
   twitter_user: '@jakelear',
   fb_admin: '15601180'
 };
+
+dotenv.config();
 
 nunjucks
   .configure('./src/layouts')
@@ -41,13 +52,28 @@ if (process.env.SERVE) {
   metadata.serve = true;
 }
 
+if (process.env.DEPLOY) {
+  Metalsmith(__dirname)
+    .use(metalsmithPush({
+      provider: 's3',
+      s3: s3_config
+    }))
+    .build(function cb(err) {
+      if(err) {
+        console.err(err);
+      }
+    });
+}
+
 Metalsmith(__dirname)
   .metadata(metadata)
-  .clean(true)
   .use(serve())
   .use(markdown())
   .source(config.source_dir)
   .destination(config.build_dir)
+  .use(sass({
+    outputDir: 'css/'   // This changes the output dir to "build/css/" instead of "build/scss/"
+  }))
   .use(
     layouts({
       engine: config.layouts_engine,
