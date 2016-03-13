@@ -8,7 +8,6 @@ var Metalsmith  = require('metalsmith'),
     nunjucks    = require('nunjucks'),
     date        = require('nunjucks-date'),
     assets      = require('metalsmith-assets'),
-    sass        = require('metalsmith-sass'),
     serve       = require('metalsmith-serve'),
     watch       = require('metalsmith-watch');
 
@@ -54,9 +53,6 @@ Metalsmith(__dirname)
       directory: config.layouts_dir
     })
   )
-  .use(sass({
-    outputDir: 'css/'
-  }))
   .use(assets(config.assets))
   .use(
     watch({
