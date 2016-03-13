@@ -1,5 +1,5 @@
 ---
-title: Jake Lear &bull; Internet Tryhard
+title: Jake Lear • Internet Tryhard
 layout: home.html
 author: Jake Lear
 ---

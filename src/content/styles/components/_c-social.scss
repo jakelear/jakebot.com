@@ -30,6 +30,19 @@ $c: '.c-social';
 #{$c}__link {
   display: inline-block;
   padding: 5px 10px;
+  svg {
+    height: 24px;
+    width: 24px;
+
+    g {
+      fill: #CCC;
+    }
+  }
+  &:hover {
+    svg g {
+      fill: #666;
+    }
+  }
 }
 
 #{$c}__icon {
