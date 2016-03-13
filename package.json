@@ -12,6 +12,7 @@
     "build": "metalsmith"
   },
   "devDependencies": {
+    "bucketful": "^0.15.5",
     "dotenv": "^2.0.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-branch": "0.0.4",
@@ -19,7 +20,7 @@
     "metalsmith-excerpts": "^1.1.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-permalinks": "^0.1.3",
-    "metalsmith-push": "^1.1.2",
+    "metalsmith-s3": "0.0.2",
     "metalsmith-sass": "^1.3.0",
     "metalsmith-serve": "0.0.7",
     "metalsmith-watch": "^1.0.1",
