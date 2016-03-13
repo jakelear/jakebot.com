@@ -1,0 +1,26 @@
+// -------------------------------------------------------------------------
+// COLORS
+// -------------------------------------------------------------------------
+
+$blue:                          #5f8097;
+
+// Grayscale
+$black-01:                      darken(#fff, 01%);
+$black-03:                      darken(#fff, 03%);
+$black-05:                      darken(#fff, 05%);
+$black-10:                      darken(#fff, 10%);
+$black-20:                      darken(#fff, 20%);
+$black-30:                      darken(#fff, 30%);
+$black-40:                      darken(#fff, 40%);
+$black-50:                      darken(#fff, 50%);
+$black-60:                      darken(#fff, 60%);
+$black-70:                      darken(#fff, 70%);
+$black-80:                      darken(#fff, 80%);
+$black-90:                      darken(#fff, 90%);
+
+// Text
+$color-text:                    $black-80;
+
+// Links
+$color-link:                    $black-80;
+$color-link-hover:              darken($color-link, 15%);

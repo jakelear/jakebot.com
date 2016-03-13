@@ -1,0 +1,32 @@
+$headers: 'Unica One', sans-serif;
+$copy: 'Vollkorn', serif;
+
+body {
+  color: $black-70;
+  font-family: $copy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers;
+  margin: 0;
+}
+
+a {
+  color: $black-70;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  margin: 1rem 0 0;
+}

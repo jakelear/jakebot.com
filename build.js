@@ -19,10 +19,10 @@ var config = {
 }
 
 var metadata = {
-  site: {
-    title: 'Jakebot',
-    url: 'http://jakebot.com'
-  }
+  title: 'Jakebot',
+  url: 'http://jakebot.com',
+  twitter_user: '@jakelear',
+  fb_admin: '15601180'
 };
 
 nunjucks
