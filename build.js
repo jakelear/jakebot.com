@@ -8,6 +8,7 @@ var Metalsmith  = require('metalsmith'),
     nunjucks    = require('nunjucks'),
     date        = require('nunjucks-date'),
     assets      = require('metalsmith-assets'),
+    ignore      = require('metalsmith-ignore'),
     serve       = require('metalsmith-serve'),
     watch       = require('metalsmith-watch');
 
@@ -53,6 +54,9 @@ Metalsmith(__dirname)
       directory: config.layouts_dir
     })
   )
+  .use(ignore([
+    'styles/**/*'
+  ]))
   .use(assets(config.assets))
   .use(
     watch({

@@ -12,30 +12,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  border-bottom: 1px solid $black-20;
   color: $black-70;
-  display: inline-block;
-  position: relative;
   outline: none;
-  overflow: hidden;
   text-decoration: none;
-  vertical-align: bottom;
-  &:before {
-    background:  $black-05;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    transform: translateY(100%);
-    transition: all 0.2s;
-    width: 100%;
-    z-index: -1;
-  }
-  &:hover {
-    &:before {
-      transform: translateY(0);
-    }
-  }
 }
 
 h1 {
@@ -51,6 +30,30 @@ p {
   font-size: 1.8rem;
   line-height: 2.4rem;
   margin: 1rem 0 0;
+
+  a {
+    border-bottom: 1px solid $black-20;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: bottom;
+    &:before {
+      background:  $black-05;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      transform: translateY(100%);
+      transition: all 0.2s;
+      width: 100%;
+      z-index: -1;
+    }
+    &:hover {
+      &:before {
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
 strong {

@@ -1,0 +1,38 @@
+$c: '.c-social';
+
+#{$c} {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+#{$c}__links-container {
+  display: inline-block;
+  position: relative;
+
+  &:before, &:after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    max-width: 200px;
+    position: absolute;
+    background: #CCC;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:before {
+    right: calc(100% + 15px);
+  }
+  &:after {
+    left: calc(100% + 15px);
+  }
+}
+
+#{$c}__link {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+#{$c}__icon {
+  height: 24px;
+  width: 24px;
+}
