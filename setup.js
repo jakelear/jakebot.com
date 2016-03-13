@@ -53,36 +53,35 @@ nunjucks
 
 module.exports = {
   metalsmith: Metalsmith(__dirname)
-  .use(markdown())
-  .use(ignore([
-    'styles/**/*',
-    'posts/drafts/**'
-  ]))
-  .use(parseDate)
-  .use(collections({
-    pages: {
-      pattern: "pages/*.md"
-    },
-    posts: {
-      pattern: "posts/*.md",
-      sortyBy: "date",
-      reverse: true
-    }
-  }))
-  .use(permalinks({
-    pattern: "./:collection/:year/:month/:day/:title"
-  }))
-  .metadata(metadata)
-  .source(config.source_dir)
-  .destination(config.build_dir)
-  .use(sass({
-    outputDir: 'css/'
-  }))
-  .use(
-    layouts({
-      engine: config.layouts_engine,
-      directory: config.layouts_dir
-    })
-  )
-  .use(assets(config.assets))
+    .use(sass({
+      outputDir: 'css/'
+    }))
+    .use(ignore([
+      'styles/**/*'
+    ]))
+    .use(markdown())
+    .use(parseDate)
+    .use(collections({
+      pages: {
+        pattern: "pages/*.md"
+      },
+      posts: {
+        pattern: "posts/*.md",
+        sortyBy: "date",
+        reverse: true
+      }
+    }))
+    .use(permalinks({
+      pattern: "./:collection/:year/:month/:day/:title"
+    }))
+    .metadata(metadata)
+    .source(config.source_dir)
+    .destination(config.build_dir)
+    .use(
+      layouts({
+        engine: config.layouts_engine,
+        directory: config.layouts_dir
+      })
+    )
+    .use(assets(config.assets))
 }
