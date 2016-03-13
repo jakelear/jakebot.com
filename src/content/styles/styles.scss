@@ -1,5 +1,14 @@
 @import 'reset';
 
+// Base Styles and Config
 @import 'config';
 @import 'colors';
 @import 'typography';
+
+// Patterns
+
+// Layouts
+@import 'layout/l-main';
+
+// Components
+@import 'components/c-intro';

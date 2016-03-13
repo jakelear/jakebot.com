@@ -1,0 +1,29 @@
+$c: '.c-intro';
+
+#{$c} {
+  margin: 158px 0 0;
+  position: relative;
+
+  // pixel illustration
+  &:before {
+    background: url("/assets/images/jake.png");
+    content: '';
+    height: 128px;
+    left: 50%;
+    margin-left: -18.5px;
+    position: absolute;
+    top: -138px;
+    width: 37px;
+  }
+
+  &:hover {
+    &:before {
+      background-position: -38px 0;
+    }
+  }
+  p {
+    font-size: 2.0rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+}

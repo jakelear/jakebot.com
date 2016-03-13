@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="{{ site.base_url }}css/styles.css">
   </head>
   <body>
-    {% block body %}
-      {{ contents | safe }}
-    {% endblock %}
-
+    <div class="l-main">
+      {% block body %}
+        {{ contents | safe }}
+      {% endblock %}
+    </div>
     {% if serve %}
     <script src="http://localhost:35729/livereload.js"></script>
     {% endif %}
