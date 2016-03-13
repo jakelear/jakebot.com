@@ -7,6 +7,7 @@ var Metalsmith  = require('metalsmith'),
     layouts     = require('metalsmith-layouts'),
     nunjucks    = require('nunjucks'),
     date        = require('nunjucks-date'),
+    assets      = require('metalsmith-assets'),
     sass        = require('metalsmith-sass'),
     serve       = require('metalsmith-serve'),
     watch       = require('metalsmith-watch');
@@ -15,7 +16,11 @@ var config = {
   source_dir      : './src/content',
   build_dir       : './build',
   layouts_dir     : './src/layouts',
-  layouts_engine  : 'nunjucks'
+  layouts_engine  : 'nunjucks',
+  assets: {
+    source: './src/content/assets',
+    destination: './assets'
+  }
 }
 
 var metadata = {
@@ -52,6 +57,7 @@ Metalsmith(__dirname)
   .use(sass({
     outputDir: 'css/'
   }))
+  .use(assets(config.assets))
   .use(
     watch({
       paths: {

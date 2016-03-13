@@ -12,6 +12,7 @@
     "build": "metalsmith"
   },
   "devDependencies": {
+    "metalsmith-assets": "^0.1.0",
     "metalsmith-branch": "0.0.4",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-excerpts": "^1.1.0",
