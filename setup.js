@@ -9,7 +9,8 @@ var Metalsmith  = require('metalsmith'),
     assets      = require('metalsmith-assets'),
     sass        = require('metalsmith-sass'),
     ignore      = require('metalsmith-ignore'),
-    serve       = require('metalsmith-serve');
+    serve       = require('metalsmith-serve'),
+    metalsmith  = Metalsmith(__dirname);
 
 // Non metalsmith-specific modules
 var nunjucks    = require('nunjucks');
@@ -25,6 +26,19 @@ var config = {
     destination: './assets'
   }
 };
+
+// Page collections like all pages or all posts
+var site_collections = {
+  posts: {
+    pattern: 'posts/!(index).md',
+    sortBy: 'date',
+    reverse: true
+  },
+  pages: {
+    pattern: '*.md',
+    sortBy: 'position',
+  }
+}
 
 // Parsedate from http://deve.rs/blog/2014/4/building-a-blog-with-metalsmith/
 function parseDate(files, metalsmith, done) {
@@ -52,36 +66,26 @@ nunjucks
   .configure('./src/layouts');
 
 module.exports = {
-  metalsmith: Metalsmith(__dirname)
+
+  metalsmith: metalsmith
+    .metadata(metadata)
     .use(sass({
       outputDir: 'css/'
     }))
-    .use(ignore([
-      'styles/**/*'
-    ]))
+    .source(config.source_dir)
+    .destination(config.build_dir)
+    .use(collections(site_collections))
     .use(markdown())
+    .use(excerpts())
     .use(parseDate)
-    .use(collections({
-      pages: {
-        pattern: "pages/*.md"
-      },
-      posts: {
-        pattern: "posts/*.md",
-        sortyBy: "date",
-        reverse: true
-      }
-    }))
     .use(permalinks({
       pattern: "./:collection/:year/:month/:day/:title"
     }))
-    .metadata(metadata)
-    .source(config.source_dir)
-    .destination(config.build_dir)
+    .use(assets(config.assets))
     .use(
       layouts({
         engine: config.layouts_engine,
         directory: config.layouts_dir
       })
     )
-    .use(assets(config.assets))
 }

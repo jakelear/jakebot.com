@@ -2,14 +2,13 @@
 <html>
   <head>
     {% include "partials/_head.html" %}
-    <link rel="stylesheet" href="{{ site.base_url }}css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
     <div class="l-main">
       {% block body %}
         {{ contents | safe }}
       {% endblock %}
-      {% include "partials/_social.html" %}
     </div>
   </body>
 </html>
