@@ -13,7 +13,8 @@ var Metalsmith  = require('metalsmith'),
     metalsmith  = Metalsmith(__dirname);
 
 // Non metalsmith-specific modules
-var nunjucks    = require('nunjucks');
+var nunjucks    = require('nunjucks')
+    date        = require('nunjucks-date-filter');
 
 // Basic metalsmith config
 var config = {
@@ -63,7 +64,10 @@ var metadata = {
 
 // Template configuration
 nunjucks
-  .configure('./src/layouts');
+  .configure('./src/layouts')
+  .addFilter('date', date);
+date
+  .setDefaultFormat('MMMM Do, YYYY');
 
 module.exports = {
 
