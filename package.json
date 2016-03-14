@@ -14,6 +14,7 @@
   "devDependencies": {
     "bucketful": "^0.15.5",
     "dotenv": "^2.0.0",
+    "gaze": "^1.0.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-branch": "0.0.4",
     "metalsmith-collections": "^0.7.0",

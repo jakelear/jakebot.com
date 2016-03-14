@@ -4,6 +4,7 @@ $copy: 'Vollkorn', serif;
 body {
   color: $black-70;
   font-family: $copy;
+  font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +36,7 @@ p {
   a {
     border-bottom: 1px solid $black-20;
     display: inline-block;
+    margin: 0 0 -1px;
     position: relative;
     overflow: hidden;
     vertical-align: bottom;

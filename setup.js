@@ -5,6 +5,7 @@ var Metalsmith  = require('metalsmith'),
     branch      = require('metalsmith-branch'),
     collections = require('metalsmith-collections'),
     excerpts    = require('metalsmith-excerpts'),
+    drafts      = require('metalsmith-drafts'),
     layouts     = require('metalsmith-layouts'),
     assets      = require('metalsmith-assets'),
     sass        = require('metalsmith-sass'),
@@ -80,6 +81,7 @@ module.exports = {
     .destination(config.build_dir)
     .use(collections(site_collections))
     .use(markdown())
+    .use(drafts())
     .use(excerpts())
     .use(parseDate)
     .use(permalinks({
