@@ -11,7 +11,6 @@ var build = function() {
     } else {
       // If the build succeeds
       console.log('Build complete');
-
     }
   });
 };

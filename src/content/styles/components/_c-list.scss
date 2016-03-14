@@ -1,0 +1,26 @@
+$c: '.c-list';
+
+#{$c} {
+  margin: 40px 0 0;
+  padding: 0 20px;
+  position: relative;
+  text-align: left;
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  time {
+    color: $black-40;
+    font-size: 1.6rem;
+    margin: 5px 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+#{$c}__item {
+  margin: 30px 0 50px;
+}

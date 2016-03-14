@@ -60,7 +60,8 @@ var metadata = {
   title: 'Jakebot',
   url: 'http://jakebot.com',
   twitter_user: '@jakelear',
-  fb_admin: '15601180'
+  fb_admin: '15601180',
+  ga_id: 'UA-75039182-1'
 };
 
 // Template configuration
@@ -78,10 +79,10 @@ module.exports = {
       outputDir: 'css/'
     }))
     .source(config.source_dir)
+    .use(drafts())
     .destination(config.build_dir)
     .use(collections(site_collections))
     .use(markdown())
-    .use(drafts())
     .use(excerpts())
     .use(parseDate)
     .use(permalinks({

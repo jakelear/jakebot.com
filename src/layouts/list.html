@@ -1,19 +1,15 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <ul class="c-nav">
-    <li>Home</li>
-    <li>Blog</li>
-    <li>Projects</li>
-  </ul>
-  <section class="c-list">
+{% include "partials/_nav.html" %}
+  <ul class="c-list">
     {% for items in collections.posts %}
-    <article>
-      <h1><a href="{{items.path}}">{{items.title}}</a></h1>
-      <time datetime="{{ items.date }}">Posted on: {{ items.date | date }}</time>
+    <li class="c-list__item">
+      <h2><a href="{{items.path}}">{{items.title}}</a></h2>
+      <time datetime="{{ items.date }}">{{ items.date | date }}</time>
         {{items.excerpt|safe}}
-      </article>
+      </li>
     {% endfor %}
-  </section>
+  </ul>
 {% endblock %}
 
