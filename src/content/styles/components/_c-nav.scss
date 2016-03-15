@@ -1,0 +1,23 @@
+$c: '.c-nav';
+
+#{$c} {
+  text-align: right;
+  padding: 0 2rem 0 0;
+}
+
+#{$c}__item {
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 2rem 1rem 0 0;
+
+  a {
+    color: $blue;
+  }
+
+  &.active {
+    a {
+      color: $black-70;
+      cursor: default;
+    }
+  }
+}

@@ -36,9 +36,8 @@ var site_collections = {
     sortBy: 'date',
     reverse: true
   },
-  pages: {
-    pattern: '*.md',
-    sortBy: 'position',
+  projects: {
+    pattern: 'projects/!(index).md'
   }
 }
 

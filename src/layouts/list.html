@@ -3,13 +3,14 @@
 {% block body %}
 {% include "partials/_nav.html" %}
   <ul class="c-list">
-    {% for items in collections.posts %}
+    {% for items in collections[collection_name] %}
     <li class="c-list__item">
-      <h2><a href="{{items.path}}">{{items.title}}</a></h2>
+      <h2><a href="/{{items.path}}">{{items.title}}</a></h2>
       <time datetime="{{ items.date }}">{{ items.date | date }}</time>
         {{items.excerpt|safe}}
       </li>
     {% endfor %}
   </ul>
+  {% include "partials/_social.html" %}
 {% endblock %}
 
