@@ -35,27 +35,6 @@ p {
 
   a {
     border-bottom: 1px solid $black-20;
-    display: inline-block;
-    margin: 0 0 -1px;
-    position: relative;
-    overflow: hidden;
-    vertical-align: bottom;
-    &:before {
-      background:  $black-05;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      transform: translateY(100%);
-      transition: all 0.2s;
-      width: 100%;
-      z-index: -1;
-    }
-    &:hover {
-      &:before {
-        transform: translateY(0);
-      }
-    }
   }
 }
 
