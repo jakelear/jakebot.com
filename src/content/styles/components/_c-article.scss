@@ -13,6 +13,10 @@ $c: '.c-article';
     display: block;
     margin: 1rem auto;
   }
+
+  .gist {
+    margin: 2rem auto
+  }
 }
 
 #{$c}__date {

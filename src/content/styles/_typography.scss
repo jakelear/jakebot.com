@@ -24,14 +24,16 @@ h1 {
 }
 
 h2 {
+  font-family: $copy;
   font-size: 2rem;
-  text-transform: uppercase;
+  font-weight: bold;
+  margin: 3rem 0 0;
 }
 
 p {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  margin: 1rem 0 0;
+  font-size: 2rem;
+  line-height: 1.5;
+  margin: 2rem 0 0;
 
   a {
     border-bottom: 1px solid $black-20;
@@ -44,4 +46,12 @@ strong {
 
 em {
   font-style: italic;
+}
+
+code {
+  background: $black-05;
+  border: 1px solid $black-10;
+  border-radius: 2px;
+  font-family: monospace;
+  padding: 3px;
 }
