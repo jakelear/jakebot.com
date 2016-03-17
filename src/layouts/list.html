@@ -5,7 +5,7 @@
   <ul class="c-list">
     {% for items in collections[collection_name] %}
     <li class="c-list__item">
-      <h2><a href="/{{items.path}}">{{items.title}}</a></h2>
+      <h1><a href="/{{items.path}}">{{items.title}}</a></h1>
       <time datetime="{{ items.date }}">{{ items.date | date }}</time>
         {{items.excerpt|safe}}
       </li>
