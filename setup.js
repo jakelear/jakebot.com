@@ -71,7 +71,6 @@ date
   .setDefaultFormat('MMMM Do, YYYY');
 
 module.exports = {
-
   metalsmith: metalsmith
     .metadata(metadata)
     .use(sass({

@@ -1,9 +1,9 @@
 var setup       = require('./setup'),
     serve       = require('metalsmith-serve');
 
-// DEPLOY
-var build = function() {
-  setup.metalsmith
+// SERVE
+// TODO: Add some sort of watch
+setup.metalsmith
   .use(serve())
   .build(function (err) {
     if (err) {
@@ -13,6 +13,3 @@ var build = function() {
       console.log('Build complete');
     }
   });
-};
-
-build();
