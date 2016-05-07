@@ -9,6 +9,10 @@ Metalsmith runs on node, so that's a dependency.
 
 There are three tasks: setup, serve, and deploy. [Setup](https://github.com/jakelear/jakebot.com/blob/master/setup.js) is the primary metalsmith workhorse, used by both of the other tasks. [Serve](https://github.com/jakelear/jakebot.com/blob/master/serve.js) is for use in the development environment and will serve the site locally and initialize [browsersync](https://www.browsersync.io/) to watch and livereload. [Deploy](https://github.com/jakelear/jakebot.com/blob/master/deploy.js) is for pushing the site to s3 and uses [bucketful](https://github.com/jakobmattsson/bucketful) - I wrote about how I set this up for [easy s3 deployment of metalsmith sites.](http://jakebot.com/posts/2016/3/14/deploying-to-s3-with-metalsmith-and-bucketful/)
 
+#### Generating new posts
+There's a rake task to generate new posts. I took most of this from [Octopress.](https://github.com/imathis/octopress/blob/ceac2d2d1c8480a40d25ce5babad7fc90015df4d/Rakefile#L97-L120)
+
+`rake new_post['my new post']` - Creates a new markdown file in the posts directory with populated frontmatter.
 
 ### License
 
