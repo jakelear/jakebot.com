@@ -3,7 +3,6 @@ var setup       = require('./setup'),
     browsersync = require('metalsmith-browser-sync');
 
 // SERVE
-// TODO: Add some sort of watch
 setup.metalsmith
   .use(serve())
   .use(browsersync({
