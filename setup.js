@@ -30,16 +30,23 @@ var config = {
 };
 
 // Page collections like all pages or all posts
-var site_collections = {
-  posts: {
-    pattern: 'posts/!(index).md',
-    sortBy: 'date',
-    reverse: true
-  },
-  projects: {
-    pattern: 'projects/!(index).md'
+var siteCollections = function() {
+  var collections =  {
+    posts: {
+      pattern: 'posts/!(index).md',
+      sortBy: 'date',
+      reverse: true
+    },
+    essays: {
+      pattern: 'posts/games/!(index).md'
+    },
+    projects: {
+      pattern: 'projects/!(index).md'
+    }
   }
-}
+
+  return collections;
+};
 
 // Parsedate from http://deve.rs/blog/2014/4/building-a-blog-with-metalsmith/
 function parseDate(files, metalsmith, done) {
@@ -79,7 +86,7 @@ module.exports = {
     .source(config.source_dir)
     .use(drafts())
     .destination(config.build_dir)
-    .use(collections(site_collections))
+    .use(collections(siteCollections()))
     .use(markdown())
     .use(excerpts())
     .use(parseDate)
