@@ -2,6 +2,8 @@
 node_modules
 build
 src/content/posts
+src/content/projects
 src/content/assets/post_assets
+src/content/assets/project_assets
 .sass-cache
 .env
