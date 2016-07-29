@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% include "partials/_nav.html" %}
+{{ contents | safe }}
+  <ul class="c-list">
+    {% for items in collections[collection_name] %}
+    <li class="c-list__item">
+      <h1><a href="/{{items.path}}">{{items.title}}</a></h1>
+        {{items.excerpt|safe}}
+      </li>
+    {% endfor %}
+  </ul>
+  {% include "partials/_social.html" %}
+{% endblock %}
+
