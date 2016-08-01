@@ -3,11 +3,12 @@
 {% block body %}
 {% include "partials/_nav.html" %}
 {{ contents | safe }}
-  <ul class="c-list">
+  <ul class="c-project-list">
     {% for items in collections[collection_name] %}
-    <li class="c-list__item">
+    <li class="c-project-list__item">
+      <img class="c-project-list__image" src="/{{items.image}}" />
       <h1><a href="/{{items.path}}">{{items.title}}</a></h1>
-        {{items.excerpt|safe}}
+        <p>{{items.excerpt|safe}}</p>
       </li>
     {% endfor %}
   </ul>

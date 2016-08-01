@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  {% include "partials/_nav.html" %}
+  <section class="c-article">
+    <h1>{{ title }}</h1>
+    {% if illustration %}
+      <img class="c-article__illo" src="{{ illustration }}" />
+    {% endif %}
+    {{ contents | safe }}
+  </section>
+{% endblock %}

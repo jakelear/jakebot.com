@@ -41,7 +41,9 @@ var siteCollections = function() {
       pattern: 'posts/games/!(index).md'
     },
     projects: {
-      pattern: 'projects/!(index).md'
+      pattern: 'projects/!(index).md',
+      sortBy: 'date',
+      reverse: true
     }
   }
 
