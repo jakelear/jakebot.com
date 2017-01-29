@@ -7,8 +7,8 @@
     {% for items in collections[collection_name] %}
     <li class="c-project-list__item">
       <img class="c-project-list__image" src="/{{items.image}}" />
-      <h1><a href="/{{items.path}}">{{items.title}}</a></h1>
-        <p>{{items.excerpt|safe}}</p>
+      <h1>{{items.title}}</h1>
+        <p>{{ items.contents | safe }}</p>
       </li>
     {% endfor %}
   </ul>
