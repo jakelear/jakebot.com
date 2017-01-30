@@ -1,5 +1,7 @@
 <ul class="c-nav">
-  <li class="c-nav__item"><a href="/">Home</a></li>
-  <li class="c-nav__item {% if active_page == 'blog' %}active{% endif %}"><a href="/posts">Writings</a></li>
+  {% if active_page != 'home' %}
+    <li class="c-nav__item"><a href="/">Home</a></li>
+  {% endif %}
   <li class="c-nav__item {% if active_page == 'projects' %}active{% endif %}"><a href="/projects">Projects</a></li>
+  <li class="c-nav__item {% if active_page == 'blog' %}active{% endif %}"><a href="/posts">Writing</a></li>
 </ul>
